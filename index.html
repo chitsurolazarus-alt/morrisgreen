@@ -3,12 +3,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Morris Green Landscaping</title>
     
+    <!-- ===== PRIMARY SEO ===== -->
+    <title>Morris Green Landscaping | Premier Landscaping Services in South Africa</title>
+    <meta name="description" content="Morris Green Landscaping offers expert landscaping, irrigation, paving, pool construction &amp; garden design in South Africa. Free consultation &amp; quotes. Call +27 62 525 5498." />
+    <meta name="keywords" content="landscaping, irrigation, paving, pool construction, garden design, South Africa, landscaping services, outdoor design, Dalmada" />
+    <link rel="canonical" href="https://morrisgreen.co.za/" />
+    
+    <!-- ===== OPEN GRAPH / SOCIAL ===== -->
+    <meta property="og:title" content="Morris Green Landscaping | Transform Your Outdoor Space" />
+    <meta property="og:description" content="Expert landscaping, irrigation, paving, and pool construction services across South Africa. 15+ years of experience." />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <meta property="og:url" content="https://morrisgreen.co.za/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- ===== SCHEMA MARKUP ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Morris Green Landscaping",
+      "image": "assets/images/logo.png",
+      "telephone": "+27 62 525 5498",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "47 Dalmada Rd",
+        "addressLocality": "Dalmada AH",
+        "addressCountry": "ZA"
+      },
+      "openingHours": "Mo-Fr 07:00-18:00",
+      "priceRange": "$$",
+      "description": "Premier landscaping, irrigation, paving, pool construction, and garden design services in South Africa since 2010.",
+      "foundingDate": "2010"
+    }
+    </script>
+    
+    <!-- ===== FONTS & ICONS ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- ===== STYLESHEET ===== -->
     <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/logo.png" />
 </head>
 <body>
 
@@ -17,14 +56,15 @@
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-bar-left">
-                    <span><i class="fas fa-phone"></i> +27 62 525 5498</span>
-                    <span><i class="fas fa-envelope"></i> info@morrisgreen.co.za</span>
+                    <span><i class="fas fa-phone"></i> <a href="tel:+27622525498">+27 62 525 5498</a></span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:info@morrisgreen.co.za">info@morrisgreen.co.za</a></span>
                     <span><i class="fas fa-clock"></i> Mon-Fri: 7AM - 6PM</span>
                 </div>
                 <div class="top-bar-right">
-                    <a href="https://www.tiktok.com/@greenmorris1landscap?_r=1&_t=ZS-985MyjZCsnl" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/27625525498" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@greenmorris1landscap?_r=1&_t=ZS-985MyjZCsnl" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/27625525498" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -32,32 +72,35 @@
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
-        <a href="#" class="logo">
-            <img src="assets/images/logo.png" alt="Morris Green" />
-            <span>Morris <span class="highlight">Green</span></span>
-        </a>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Morris Green Landscaping Logo" />
+                <span>Morris <span class="highlight">Green</span></span>
+            </a>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-                <a href="https://wa.me/27625525498?text=Hi%20Morris%20Green%2C%20I'd%20like%20a%20quote." 
-                   target="_blank" class="nav-cta">
-                    <i class="fab fa-whatsapp"></i> Get Quote
-                </a>
-            </li>
-        </ul>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="https://wa.me/27625525498?text=Hi%20Morris%20Green%2C%20I'd%20like%20a%20free%20quote%20for%20landscaping." 
+                       target="_blank" class="nav-cta">
+                        <i class="fab fa-whatsapp"></i> Free Quote
+                    </a>
+                </li>
+            </ul>
 
-        <button class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="hero">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="assets/videos/hero-bg.mp4" type="video/mp4" />
@@ -65,27 +108,58 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <div class="badge"><i class="fas fa-leaf"></i> Since 2010</div>
-            <h1>Transform Your <span class="highlight">Outdoor Space</span></h1>
-            <p>Expert landscaping, irrigation, paving, and pool construction — bringing your dream garden to life.</p>
+            <div class="badge">
+                <i class="fas fa-award"></i> South Africa's Trusted Landscaping Experts Since 2010
+            </div>
+            <h1>
+                Transform Your <br />
+                <span class="highlight">Outdoor Space</span>
+            </h1>
+            <p>
+                <strong>Premium landscaping, irrigation, paving &amp; pool construction</strong> 
+                across South Africa. We turn ordinary yards into extraordinary outdoor 
+                living spaces with <strong>15+ years of expertise</strong>.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">% Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+
             <div class="hero-buttons">
-                <a href="https://wa.me/27625525498?text=Hi%20Morris%20Green%2C%20I'd%20like%20a%20quote." 
-                   target="_blank" class="btn-primary">
-                    <i class="fab fa-whatsapp"></i> Get a Quote
+                <a href="https://wa.me/27625525498?text=Hi%20Morris%20Green%2C%20I'd%20like%20a%20free%20quote%20for%20landscaping." 
+                   target="_blank" class="btn-primary pulse">
+                    <i class="fab fa-whatsapp"></i> Get Your Free Quote
                 </a>
                 <a href="#services" class="btn-outline">
-                    <i class="fas fa-chevron-down"></i> Our Services
+                    <i class="fas fa-chevron-down"></i> Explore Services
                 </a>
             </div>
         </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-- ===== SERVICES SECTION ===== -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Professional landscaping solutions tailored to your needs</p>
+                <span class="section-tag">What We Do</span>
+                <h2>Our Professional Landscaping Services</h2>
+                <p>Comprehensive outdoor solutions designed to enhance your property's beauty and value</p>
                 <div class="line"></div>
             </div>
 
@@ -94,15 +168,21 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-sprinkler"></i></div>
                     <h3>Irrigation Installation</h3>
-                    <p>Manual &amp; automatic systems for efficient water management.</p>
+                    <p>Smart water management systems that save up to 40% on water bills while keeping your garden lush.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Manual &amp; Automatic Systems</li>
+                        <li><i class="fas fa-check"></i> Drip Irrigation Solutions</li>
+                        <li><i class="fas fa-check"></i> Smart Controllers &amp; Sensors</li>
+                        <li><i class="fas fa-check"></i> Water Conservation Design</li>
+                    </ul>
                     <div class="before-after">
                         <span><i class="fas fa-camera"></i> Before</span>
                         <span><i class="fas fa-arrow-right"></i></span>
                         <span><i class="fas fa-check-circle"></i> After</span>
                     </div>
                     <div class="service-images">
-                        <img src="assets/images/before-after/irrigation-before.jpg" alt="Before" />
-                        <img src="assets/images/before-after/irrigation-after.jpg" alt="After" />
+                        <img src="assets/images/before-after/irrigation-before.jpg" alt="Irrigation Before" />
+                        <img src="assets/images/before-after/irrigation-after.jpg" alt="Irrigation After" />
                     </div>
                 </div>
 
@@ -110,15 +190,21 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-road"></i></div>
                     <h3>Paving Installation</h3>
-                    <p>Driveways, patios, and walkways with premium materials.</p>
+                    <p>Durable, aesthetic paving solutions that transform driveways, patios, and walkways into stunning features.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Concrete &amp; Natural Stone</li>
+                        <li><i class="fas fa-check"></i> Permeable Paving Systems</li>
+                        <li><i class="fas fa-check"></i> Driveways &amp; Walkways</li>
+                        <li><i class="fas fa-check"></i> Patios &amp; Outdoor Living</li>
+                    </ul>
                     <div class="before-after">
                         <span><i class="fas fa-camera"></i> Before</span>
                         <span><i class="fas fa-arrow-right"></i></span>
                         <span><i class="fas fa-check-circle"></i> After</span>
                     </div>
                     <div class="service-images">
-                        <img src="assets/images/before-after/paving-before.jpg" alt="Before" />
-                        <img src="assets/images/before-after/paving-after.jpg" alt="After" />
+                        <img src="assets/images/before-after/paving-before.jpg" alt="Paving Before" />
+                        <img src="assets/images/before-after/paving-after.jpg" alt="Paving After" />
                     </div>
                 </div>
 
@@ -126,15 +212,21 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-swimmer"></i></div>
                     <h3>Pool Construction &amp; Maintenance</h3>
-                    <p>Custom pools built to last, with ongoing care.</p>
+                    <p>Custom-designed pools that blend luxury with functionality, plus comprehensive maintenance plans.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom Pool Designs</li>
+                        <li><i class="fas fa-check"></i> Comprehensive Maintenance</li>
+                        <li><i class="fas fa-check"></i> Eco-Friendly Filtration</li>
+                        <li><i class="fas fa-check"></i> Pool Renovations</li>
+                    </ul>
                     <div class="before-after">
                         <span><i class="fas fa-camera"></i> Before</span>
                         <span><i class="fas fa-arrow-right"></i></span>
                         <span><i class="fas fa-check-circle"></i> After</span>
                     </div>
                     <div class="service-images">
-                        <img src="assets/images/before-after/pool-before.jpg" alt="Before" />
-                        <img src="assets/images/before-after/pool-after.jpg" alt="After" />
+                        <img src="assets/images/before-after/pool-before.jpg" alt="Pool Before" />
+                        <img src="assets/images/before-after/pool-after.jpg" alt="Pool After" />
                     </div>
                 </div>
 
@@ -142,61 +234,190 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-seedling"></i></div>
                     <h3>Garden Design &amp; Installation</h3>
-                    <p>Beautiful, sustainable gardens from concept to bloom.</p>
+                    <p>Beautiful, sustainable gardens that create a lasting impression and connection with nature.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Native Plant Selection</li>
+                        <li><i class="fas fa-check"></i> Water-Wise Designs</li>
+                        <li><i class="fas fa-check"></i> Seasonal Color Planning</li>
+                        <li><i class="fas fa-check"></i> Low-Maintenance Solutions</li>
+                    </ul>
                     <div class="before-after">
                         <span><i class="fas fa-camera"></i> Before</span>
                         <span><i class="fas fa-arrow-right"></i></span>
                         <span><i class="fas fa-check-circle"></i> After</span>
                     </div>
                     <div class="service-images">
-                        <img src="assets/images/before-after/garden-before.jpg" alt="Before" />
-                        <img src="assets/images/before-after/garden-after.jpg" alt="After" />
+                        <img src="assets/images/before-after/garden-before.jpg" alt="Garden Before" />
+                        <img src="assets/images/before-after/garden-after.jpg" alt="Garden After" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <p><strong>All services include:</strong> Free consultation | Detailed project plan | Premium materials | Ongoing support</p>
+                <a href="https://wa.me/27625525498?text=Hi%20Morris%20Green%2C%20I'd%20like%20to%20discuss%20a%20project." 
+                   target="_blank" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Start Your Project Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Why South Africa Trusts Morris Green</h2>
+                <p>We deliver exceptional quality, reliability, and service that exceeds expectations</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-trophy"></i></div>
+                    <h4>15+ Years Excellence</h4>
+                    <p>Over a decade of proven expertise transforming outdoor spaces across South Africa.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-leaf"></i></div>
+                    <h4>Eco-Friendly Solutions</h4>
+                    <p>Sustainable designs that conserve water, reduce costs, and protect our environment.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-smile"></i></div>
+                    <h4>100% Satisfaction</h4>
+                    <p>We don't rest until you're completely happy. Our reputation is built on happy clients.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-clock"></i></div>
+                    <h4>On-Time Delivery</h4>
+                    <p>Every project completed on schedule without compromising quality or safety.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-users"></i></div>
+                    <h4>Expert Team</h4>
+                    <p>Skilled professionals with years of hands-on experience in every project.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Quality Guaranteed</h4>
+                    <p>Premium materials and workmanship backed by comprehensive warranties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-tag">Our Portfolio</span>
+                <h2>Recent Projects Gallery</h2>
+                <p>See the transformation — real projects from real clients across South Africa</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gallery-1.jpg" alt="Landscaping Project 1" />
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gallery-2.jpg" alt="Landscaping Project 2" />
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gallery-3.jpg" alt="Landscaping Project 3" />
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gallery-4.jpg" alt="Landscaping Project 4" />
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gallery-5.jpg" alt="Landscaping Project 5" />
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our Clients Say</h2>
+                <p>Real reviews from homeowners and businesses we've helped</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Morris Green completely transformed our backyard. The irrigation system they installed has saved us 40% on water bills. Incredible service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Cape Town</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"The pool construction team was exceptional. Completed ahead of schedule with outstanding quality. Our family enjoys it every single day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Roberts</h4>
+                            <span>Johannesburg</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Their garden design completely changed our property's curb appeal. The native plant selection is stunning and low-maintenance. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Emily Van Der Merwe</h4>
+                            <span>Durban</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Gallery</h2>
-                <p>See our recent projects and transformations</p>
-                <div class="line"></div>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/gallery-1.jpg" alt="Gallery 1" />
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/gallery-2.jpg" alt="Gallery 2" />
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/gallery-3.jpg" alt="Gallery 3" />
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/gallery-4.jpg" alt="Gallery 4" />
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/gallery/gallery-5.jpg" alt="Gallery 5" />
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch for a free consultation and quote</p>
+                <span class="section-tag">Get in Touch</span>
+                <h2>Ready to Transform Your Property?</h2>
+                <p>Contact us for a free consultation and quote — we'll bring your vision to life</p>
                 <div class="line"></div>
             </div>
 
@@ -206,14 +427,24 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+27 62 525 5498</p>
+                            <p><a href="tel:+27622525498">+27 62 525 5498</a></p>
+                            <small>Mon-Fri, 7AM - 6PM</small>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@morrisgreen.co.za">info@morrisgreen.co.za</a></p>
+                            <small>We respond within 24 hours</small>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>47 Dalmada Rd, Dalmada AH, South Africa</p>
+                            <p>47 Dalmada Rd, Dalmada AH</p>
+                            <small>South Africa</small>
                         </div>
                     </div>
                     <div class="info-item">
@@ -221,40 +452,38 @@
                         <div>
                             <h4>Service Area</h4>
                             <p>International</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Hours</h4>
-                            <p>Mon-Fri: 7AM - 6PM</p>
+                            <small>Serving clients worldwide</small>
                         </div>
                     </div>
                     <div class="social-links">
                         <a href="https://www.tiktok.com/@greenmorris1landscap?_r=1&_t=ZS-985MyjZCsnl" target="_blank"><i class="fab fa-tiktok"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/27625525498" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <h3>Request a Quote</h3>
+                    <h3>Request Your Free Quote</h3>
+                    <p>Fill in the form and we'll get back to you within 24 hours</p>
                     <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required />
+                        <input type="text" placeholder="Your Full Name" required />
                         <input type="email" placeholder="Email Address" required />
                         <input type="tel" placeholder="Phone Number" required />
                         <select required>
                             <option value="">Select a Service</option>
                             <option value="irrigation">Irrigation Installation</option>
                             <option value="paving">Paving Installation</option>
-                            <option value="pool">Pool Construction</option>
-                            <option value="garden">Garden Design</option>
+                            <option value="pool">Pool Construction &amp; Maintenance</option>
+                            <option value="garden">Garden Design &amp; Installation</option>
+                            <option value="multiple">Multiple Services</option>
                         </select>
-                        <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
+                        <textarea placeholder="Tell us about your project, budget, and timeline..." rows="4" required></textarea>
                         <button type="submit" class="btn-primary">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
                     </form>
+                    <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and confidential</p>
                 </div>
             </div>
         </div>
@@ -263,14 +492,65 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 <span>Morris Green Landscaping</span> — Crafting outdoor excellence.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="Morris Green Landscaping" />
+                    <h3>Morris Green Landscaping</h3>
+                    <p>Crafting outdoor excellence since 2010. We bring your garden dreams to life with expert design, installation, and maintenance.</p>
+                    <div class="footer-social">
+                        <a href="https://www.tiktok.com/@greenmorris1landscap?_r=1&_t=ZS-985MyjZCsnl" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/27625525498" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Irrigation Installation</li>
+                        <li>Paving Installation</li>
+                        <li>Pool Construction</li>
+                        <li>Garden Design</li>
+                        <li>Maintenance Services</li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Inspired</h4>
+                    <p>Get landscaping tips and inspiration</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+27622525498">+27 62 525 5498</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@morrisgreen.co.za">info@morrisgreen.co.za</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> 47 Dalmada Rd, Dalmada AH</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span>Morris Green Landscaping</span>. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
+            </div>
         </div>
     </footer>
 
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
 </body>
 </html>
