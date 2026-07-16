@@ -6,6 +6,49 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ===== NAVBAR HIDE ON SCROLL DOWN / SHOW ON SCROLL UP =====
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    let isNavbarHidden = false;
+
+    window.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY;
+        
+        // Hide navbar when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down - hide navbar
+            if (!isNavbarHidden) {
+                navbar.classList.add('hide');
+                isNavbarHidden = true;
+            }
+        } else if (currentScrollY < lastScrollY) {
+            // Scrolling up - show navbar
+            if (isNavbarHidden) {
+                navbar.classList.remove('hide');
+                isNavbarHidden = false;
+            }
+        }
+        
+        // Update shadow based on scroll position
+        if (currentScrollY > 60) {
+            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.25)';
+            navbar.style.background = 'rgba(27, 94, 32, 0.98)';
+        } else {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.12)';
+            navbar.style.background = 'rgba(27, 94, 32, 0.95)';
+        }
+        
+        lastScrollY = currentScrollY;
+    });
+
+    // Show navbar when user hovers near top of page
+    document.addEventListener('mousemove', function(e) {
+        if (e.clientY < 50 && isNavbarHidden) {
+            navbar.classList.remove('hide');
+            isNavbarHidden = false;
+        }
+    });
+
     // ===== MOBILE MENU TOGGLE =====
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -15,33 +58,18 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('open');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
                 navLinks.classList.remove('open');
             }
         });
 
-        // Close menu on link click (mobile)
         document.querySelectorAll('.nav-links a').forEach(function(link) {
             link.addEventListener('click', function() {
                 navLinks.classList.remove('open');
             });
         });
     }
-
-    // ===== NAVBAR SCROLL EFFECT =====
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 60) {
-            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.25)';
-            navbar.style.background = 'rgba(27, 94, 32, 0.98)';
-        } else {
-            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.12)';
-            navbar.style.background = 'rgba(27, 94, 32, 0.95)';
-        }
-    });
 
     // ===== BACK TO TOP BUTTON =====
     const backToTop = document.getElementById('backToTop');
@@ -139,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function() {
             const img = this.querySelector('img');
             if (img) {
-                // Create lightbox
                 const lightbox = document.createElement('div');
                 lightbox.style.cssText = `
                     position: fixed;
@@ -153,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     justify-content: center;
                     z-index: 9999;
                     cursor: pointer;
-                    animation: fadeIn 0.3s ease;
                     padding: 20px;
                 `;
                 
@@ -170,13 +196,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.appendChild(lightbox);
                 document.body.style.overflow = 'hidden';
                 
-                // Close on click
                 lightbox.addEventListener('click', function() {
                     this.remove();
                     document.body.style.overflow = '';
                 });
                 
-                // Close with ESC key
                 document.addEventListener('keydown', function escHandler(e) {
                     if (e.key === 'Escape') {
                         if (document.querySelector('div[style*="position: fixed"]')) {
@@ -203,21 +227,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ===== SERVICE CARD INTERACTION =====
-    document.querySelectorAll('.service-card').forEach(function(card) {
-        card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 20px 60px rgba(27, 94, 32, 0.15)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '';
-        });
-    });
-
     // ===== SCROLL REVEAL ANIMATION =====
     const revealElements = document.querySelectorAll(
-        '.service-card, .project-item, .testimonial-card, .gallery-item, ' +
-        '.about-content, .contact-detail, .why-item, .about-image'
+        '.service-card, .gallery-item, .about-content, .contact-detail, .why-item'
     );
 
     const revealObserver = new IntersectionObserver(function(entries) {
@@ -252,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c📞 +27 62 525 5498 | 📍 47 Dalmada Rd, Dalmada AH, South Africa', 'font-size: 12px; color: #555;');
     console.log('%c✅ Website loaded successfully!', 'font-size: 12px; color: #1B5E20;');
 
-    // ===== SMOOTH SCROLL INDICATOR =====
+    // ===== SCROLL INDICATOR CLICK =====
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if (scrollIndicator) {
         scrollIndicator.addEventListener('click', function() {
@@ -262,26 +274,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // ===== ACTIVE NAV LINK ON SCROLL =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinksAll = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
-    window.addEventListener('scroll', function() {
-        let current = '';
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop - 150;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinksAll.forEach(function(link) {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
-    });
 
 });
