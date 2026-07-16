@@ -14,20 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollY = 0;
     let isHidden = false;
 
-    // Check if top bar exists (it does on desktop)
-    const topBarHeight = topBar ? topBar.offsetHeight : 0;
-
     window.addEventListener('scroll', function() {
         const currentScrollY = window.scrollY;
         
-        // Hide navbar when scrolling down past 100px
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             if (!isHidden) {
                 navbar.classList.add('hide');
                 isHidden = true;
             }
         } 
-        // Show navbar when scrolling up
         else if (currentScrollY < lastScrollY) {
             if (isHidden) {
                 navbar.classList.remove('hide');
@@ -35,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Dynamic shadow on scroll
         if (currentScrollY > 60) {
             navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.25)';
         } else {
@@ -45,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = currentScrollY;
     });
 
-    // Show navbar when user hovers near top of page (user experience)
+    // Show navbar when hovering near top
     document.addEventListener('mousemove', function(e) {
         if (e.clientY < 50 && isHidden) {
             navbar.classList.remove('hide');
@@ -53,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Also show navbar when user scrolls to very top
+    // Show navbar at very top
     window.addEventListener('scroll', function() {
         if (window.scrollY < 50 && isHidden) {
             navbar.classList.remove('hide');
@@ -73,14 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('open');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
                 navLinks.classList.remove('open');
             }
         });
 
-        // Close menu on link click (mobile)
         document.querySelectorAll('.nav-links a').forEach(function(link) {
             link.addEventListener('click', function() {
                 navLinks.classList.remove('open');
@@ -158,6 +150,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========================================
+    // CLICKABLE IMAGE LIGHTBOX (SERVICE IMAGES + GALLERY)
+    // ========================================
+    function createLightbox(img) {
+        const lightbox = document.createElement('div');
+        lightbox.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        `;
+        
+        const clone = img.cloneNode();
+        clone.style.cssText = `
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            object-fit: contain;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        `;
+        
+        lightbox.appendChild(clone);
+        document.body.appendChild(lightbox);
+        document.body.style.overflow = 'hidden';
+        
+        // Close on click
+        lightbox.addEventListener('click', function() {
+            this.remove();
+            document.body.style.overflow = '';
+        });
+        
+        // Close on ESC
+        document.addEventListener('keydown', function escHandler(e) {
+            if (e.key === 'Escape') {
+                if (document.querySelector('div[style*="position: fixed"]')) {
+                    document.querySelector('div[style*="position: fixed"]').remove();
+                    document.body.style.overflow = '';
+                    document.removeEventListener('keydown', escHandler);
+                }
+            }
+        });
+    }
+
+    // Clickable service images
+    document.querySelectorAll('.service-images img.clickable-img').forEach(function(img) {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            createLightbox(this);
+        });
+    });
+
+    // Gallery images
+    document.querySelectorAll('.gallery-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img) {
+                createLightbox(img);
+            }
+        });
+    });
+
+    // ========================================
     // CONTACT FORM
     // ========================================
     const contactForm = document.getElementById('contactForm');
@@ -183,44 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // ========================================
-    // GALLERY LIGHTBOX
-    // ========================================
-    document.querySelectorAll('.gallery-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            if (img) {
-                const lightbox = document.createElement('div');
-                lightbox.style.cssText = `
-                    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                    background: rgba(0,0,0,0.92); display: flex; align-items: center;
-                    justify-content: center; z-index: 9999; cursor: pointer; padding: 20px;
-                `;
-                const clone = img.cloneNode();
-                clone.style.cssText = `
-                    max-width: 90%; max-height: 90%; border-radius: 8px; object-fit: contain;
-                `;
-                lightbox.appendChild(clone);
-                document.body.appendChild(lightbox);
-                document.body.style.overflow = 'hidden';
-                lightbox.addEventListener('click', function() {
-                    this.remove();
-                    document.body.style.overflow = '';
-                });
-                // Close on ESC
-                document.addEventListener('keydown', function escHandler(e) {
-                    if (e.key === 'Escape') {
-                        if (document.querySelector('div[style*="position: fixed"]')) {
-                            document.querySelector('div[style*="position: fixed"]').remove();
-                            document.body.style.overflow = '';
-                            document.removeEventListener('keydown', escHandler);
-                        }
-                    }
-                });
-            }
-        });
-    });
 
     // ========================================
     // PARALLAX EFFECT ON HERO VIDEO
@@ -285,11 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========================================
-    // CONSOLE WELCOME (Marketing Touch)
+    // CONSOLE WELCOME
     // ========================================
     console.log('%c🌿 Morris Green Landscaping', 'font-size: 24px; font-weight: bold; color: #1B5E20;');
     console.log('%c🏆 South Africa\'s Trusted Landscaping Experts Since 2010', 'font-size: 14px; color: #66A63A;');
     console.log('%c📞 +27 62 525 5498 | 📍 47 Dalmada Rd, Dalmada AH', 'font-size: 12px; color: #555;');
-    console.log('%c✅ Website optimized for marketing & SEO', 'font-size: 12px; color: #1B5E20;');
+    console.log('%c✅ Click on any before/after image to view full size!', 'font-size: 12px; color: #1B5E20;');
 
 });
