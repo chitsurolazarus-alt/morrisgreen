@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========================================
-    // CLICKABLE IMAGE LIGHTBOX (SERVICE IMAGES + GALLERY)
+    // CLICKABLE IMAGE LIGHTBOX
     // ========================================
     function createLightbox(img) {
         const lightbox = document.createElement('div');
@@ -183,13 +183,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(lightbox);
         document.body.style.overflow = 'hidden';
         
-        // Close on click
         lightbox.addEventListener('click', function() {
             this.remove();
             document.body.style.overflow = '';
         });
         
-        // Close on ESC
         document.addEventListener('keydown', function escHandler(e) {
             if (e.key === 'Escape') {
                 if (document.querySelector('div[style*="position: fixed"]')) {
@@ -201,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Clickable service images
     document.querySelectorAll('.service-images img.clickable-img').forEach(function(img) {
         img.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -209,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Gallery images
     document.querySelectorAll('.gallery-item').forEach(function(item) {
         item.addEventListener('click', function() {
             const img = this.querySelector('img');
@@ -220,14 +216,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========================================
-    // CONTACT FORM
+    // CONTACT FORM - REDIRECT TO WHATSAPP
     // ========================================
     const contactForm = document.getElementById('contactForm');
+    const whatsappNumber = '27767048283';
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('✅ Thank you for your message! We\'ll get back to you within 24 hours.');
-            this.reset();
+            
+            // Get form values
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phoneNumber').value.trim();
+            const service = document.getElementById('serviceType').value;
+            const details = document.getElementById('projectDetails').value.trim();
+            
+            // Build the WhatsApp message
+            let message = 'Hello Morris Green Landscaping!%0A%0A';
+            message += '📋 *New Quote Request*%0A';
+            message += '📝 *Name:* ' + encodeURIComponent(name) + '%0A';
+            message += '📱 *Phone:* ' + encodeURIComponent(phone) + '%0A';
+            message += '🛠️ *Service:* ' + encodeURIComponent(service) + '%0A%0A';
+            message += '📄 *Project Details:*%0A' + encodeURIComponent(details);
+            
+            // Create WhatsApp URL
+            const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + message;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Show confirmation
+            alert('✅ Your message has been prepared! You will be redirected to WhatsApp to send it.');
         });
     }
 
@@ -313,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     console.log('%c🌿 Morris Green Landscaping', 'font-size: 24px; font-weight: bold; color: #1B5E20;');
     console.log('%c🏆 South Africa\'s Trusted Landscaping Experts Since 2010', 'font-size: 14px; color: #66A63A;');
-    console.log('%c📞 +27 62 525 5498 | 📍 47 Dalmada Rd, Dalmada AH', 'font-size: 12px; color: #555;');
+    console.log('%c📞 +27 76 704 8283 | 📍 47 Dalmada Rd, Dalmada AH', 'font-size: 12px; color: #555;');
     console.log('%c✅ Click on any before/after image to view full size!', 'font-size: 12px; color: #1B5E20;');
 
 });
